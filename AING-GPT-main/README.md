@@ -8,7 +8,7 @@ Langkah cepat untuk deploy di Vercel (GitHub):
 - 2. Di dashboard Vercel, buka project -> Settings -> Environment Variables.
 - 3. Tambahkan variabel environment berikut (Production/Preview/Development sesuai kebutuhan):
   - `GENERATIVE_API_KEY` : API key Google Generative Language (contoh: `AIza...`) — wajib.
-  - `GEMA_MODEL` : (opsional) model, default `gema-2.5-flash`.
+  - `GEMA_MODEL` : (opsional) model, default `gemma-4-31b-it`.
 
 - 4. Commit dan push perubahan (sudah menghapus API key dari `index.html`). Vercel otomatis akan deploy dari branch yang terhubung.
 

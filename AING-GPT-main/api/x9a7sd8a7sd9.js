@@ -18,8 +18,8 @@ export default async function handler(req, res) {
   const keysString = process.env.GEMA_API_KEYS || process.env.GENERATIVE_API_KEY || '';
   const apiKeys = keysString.split(',').filter(k => k.trim().length > 0);
   
-  // Default ke 1.5-flash jika env tidak diisi (karena 2.5 belum rilis publik saat ini)
-  const GEMA_MODEL = process.env.GEMA_MODEL || 'gema-2.5-flash';
+  // Default model jika env tidak diisi
+  const GEMA_MODEL = process.env.GEMA_MODEL || 'gemma-4-31b-it';
 
   if (apiKeys.length === 0) {
     console.error('Missing GEMA_API_KEYS environment variable');
