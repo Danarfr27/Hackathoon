@@ -107,8 +107,7 @@
 
       <!-- Input Area -->
       <div class="input-area">
-        <div class="input-wrapper">
-          <textarea class="chat-input" id="chatInput" placeholder="Apa yang ingin anda tanyakan..." autocomplete="off"
+        <div class="input-wrapper">            <label class="sr-only" for="chatInput">Pesan</label>          <textarea class="chat-input" id="chatInput" placeholder="Apa yang ingin anda tanyakan..." autocomplete="off"
             rows="1"></textarea>
           <div class="input-toolbar">
             <label class="upload-btn" for="fileInput" title="Unggah file (TXT, MD, JSON, DOCX, PDF)">
@@ -145,17 +144,20 @@
         <button id="closeImageModal" class="theme-toggle" style="padding:6px 10px;">Close</button>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
-        <input id="imagePrompt"
+        <label class="sr-only" for="imagePrompt">Prompt gambar</label>
+        <input id="imagePrompt" name="imagePrompt"
           placeholder="Tuliskan deskripsi gambar (contoh: pemandangan pegunungan saat matahari terbenam)"
           style="flex:1;padding:10px;border-radius:8px;border:1px solid var(--border-color);background:var(--bg-card-light);color:var(--text-primary);">
-        <input id="imageModel" list="modelSuggestions" placeholder="gema-2.5-flash-image (optional)"
+        <label class="sr-only" for="imageModel">Model gambar</label>
+        <input id="imageModel" name="imageModel" list="modelSuggestions" placeholder="gema-2.5-flash-image (optional)"
           style="width:260px;padding:10px;border-radius:8px;border:1px solid var(--border-color);background:var(--bg-card-light);color:var(--text-primary);">
         <datalist id="modelSuggestions">
           <option value="gema-2.5-flash-image"></option>
           <option value="gema-1.5-image"></option>
           <option value="gpt-image-1"></option>
         </datalist>
-        <select id="imageSize"
+        <label class="sr-only" for="imageSize">Ukuran gambar</label>
+        <select id="imageSize" name="imageSize"
           style="width:140px;padding:10px;border-radius:8px;border:1px solid var(--border-color);background:var(--bg-card-light);color:var(--text-primary);">
           <option value="512x512">512x512</option>
           <option value="768x768">768x768</option>
@@ -209,15 +211,15 @@
 
       // wire quick actions
       const apiBtn = document.getElementById('apiCheckBtn');
-      if(apiBtn) apiBtn.addEventListener('click', ()=> window.open('https://apicheck-liart.vercel.app/','_blank'));
+      if(apiBtn) apiBtn.addEventListener('click', ()=> window.open('https://apicheck-liart.vercel.app/','_blank','noopener,noreferrer'));
       const qrBtn = document.getElementById('qrBtn');
-      if(qrBtn) qrBtn.addEventListener('click', ()=> window.open('https://qr-aing.vercel.app/','_blank'));
+      if(qrBtn) qrBtn.addEventListener('click', ()=> window.open('https://qr-aing.vercel.app/','_blank','noopener,noreferrer'));
       const tempOtpBtn = document.getElementById('tempOtpBtn');
-      if(tempOtpBtn) tempOtpBtn.addEventListener('click', ()=> window.open('https://tempmail-orpin.vercel.app/login.html','_blank'));
+      if(tempOtpBtn) tempOtpBtn.addEventListener('click', ()=> window.open('https://tempmail-orpin.vercel.app/login.html','_blank','noopener,noreferrer'));
       const paletteBtn = document.getElementById('paletteBtn');
       if(paletteBtn) paletteBtn.addEventListener('click', hackerThemeLoginAlert);
       const shopBtn = document.getElementById('shopBtn');
-      if(shopBtn) shopBtn.addEventListener('click', ()=> window.open('https://fearhackshop.vercel.app','_blank'));
+      if(shopBtn) shopBtn.addEventListener('click', ()=> window.open('https://fearhackshop.vercel.app','_blank','noopener,noreferrer'));
 
       // close nav when any nav-item clicked (keeps mobile tidy)
       document.querySelectorAll('.nav-item').forEach(item=>{
